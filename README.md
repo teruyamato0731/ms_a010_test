@@ -22,3 +22,16 @@ Ubuntu 22.04で動作確認済み。
     code ms_a010_test
     ```
 1. 「Reopen in Container」でdevcontainerを開く
+1. ```bash
+    sudo apt update && rosdep update && rosdep install --from-path src --ignore-src -y
+    colcon build
+    source install/local_setup.bash
+    sudo adduser $USER dialout
+    ros2 run sipeed_tof_ms_a010 publisher --ros-args -p device:="/dev/ttyUSB0"
+    ```
+    ```bash
+    ```
+
+# reference
+https://dl.sipeed.com/shareURL/MaixSense/MaixSense_A010/software_pack/SDK
+https://blog.mmaakkyyii.com/posts/post42/
